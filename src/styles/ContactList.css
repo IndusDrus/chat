@@ -1,0 +1,59 @@
+.contact-list {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 350px;
+}
+
+.contact-title-wrapper {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+  	-ms-flex-align: center;
+  	align-items: center;
+	height: 80px;
+	padding: 0 30px;
+}
+
+.contact-title {
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+.contact-card {
+	padding: 17px 30px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+  	-ms-flex-align: center;
+  	align-items: center;
+	border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.contact-avatar-wrapper {
+	display: inline-block;
+	margin: 0 2rem 0 0;
+	height: 2.3rem;
+	width: 2.3rem;
+	border-radius: 50%;
+}
+
+.contact-avatar {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	border-radius: 50%
+}
+
+.contact-nickname {
+	color: #0a80ff;
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 500;
+}

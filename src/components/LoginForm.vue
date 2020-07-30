@@ -5,15 +5,15 @@
 	     	<input required 
 	     		   v-model="nickname"
 			   	   type="text"
-			   	   class="login-form-input"
+			   	   class="form-text-input"
 			   	   placeholder="Введите никнейм"
 			   	   maxlength="20"/>
 	     	<input required
 	     		   v-model="avatarURL"
 			   	   type="text"
-			   	   class="login-form-input"
+			   	   class="form-text-input"
 			   	   placeholder="Вставьте ссылку на аватар"/>
-	     	<button type="submit" class="login-btn">Login</button>
+	     	<button type="submit" class="login-btn btn btn-form">Войти</button>
 	   	</form>
 	</div>
 </template>
@@ -32,7 +32,7 @@
 				let nickname = this.nickname
 				let avatarURL = this.avatarURL
 				this.$store.dispatch('login', {nickname, avatarURL})
-				this.$emit('loggedIn', nickname)
+				this.$emit('loggedIn', {nickname, avatarURL})
 			}
 		}
 	}

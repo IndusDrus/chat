@@ -13,19 +13,34 @@ export default new Vuex.Store({
     ],
     messages: [
       {
-        name: "asd",
+        from: "asd",
+        to: "Иван Иванов",
         text: "Message 1",
         time: "16:36"
       },
       {
-        name: "Иван Иванов",
+        from: "Иван Иванов",
+        to: "asd",
         text: "Message 2",
         time: "16:38"
       },
       {
-        name: "Иван Иванов",
+        from: "Иван Иванов",
+        to: "asd",
         text: "Message 3",
         time: "16:39"
+      },
+      {
+        from: "asd",
+        to: "asd",
+        text: "Message 4",
+        time: "17:39"
+      },
+      {
+        from: "asd",
+        to: "asd",
+        text: "Message 5",
+        time: "18:39"
       }
     ]
   },

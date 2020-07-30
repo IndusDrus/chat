@@ -14,14 +14,14 @@
     data () {
       return {
         isLoggedIn: false,
-        currentUser: ""
+        currentUser: {}
       }
     },
 
     methods: {
-      login (nickname) {
+      login (user) {
         this.isLoggedIn = true
-        this.currentUser = nickname
+        this.currentUser = user
       }
     },
 

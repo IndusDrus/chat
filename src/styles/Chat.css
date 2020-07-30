@@ -1,5 +1,35 @@
+.chat-container {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	height: 100%;
+}
+
+.contact-list-wrapper {
+	border-right: 1px solid rgba(0,0,0,.125);
+	width: 350px;
+}
+
 .chat-wrapper {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+@media (max-width: 960px) {
+	.contact-list-wrapper {
+		width: 30%;
+	}
+}
+
+@media (max-width: 768px) {
+	.contact-list-wrapper {
+		display: none;
+	}
 }

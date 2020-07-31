@@ -6,9 +6,7 @@
 }
 
 .contact-list-wrapper {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
+	border-right: 1px solid rgba(0,0,0,.125);
 }
 
 .chat-wrapper {
@@ -33,14 +31,11 @@
 		bottom: 0;
 		z-index: 999;
 		background: rgba(0, 0, 0, .7);
-		-webkit-justify-content: flex-end;
-		-ms-flex-pack: end;
-		justify-content: flex-end;
+		border-right: 0;
+		border-left: 1px solid rgba(0,0,0,.125);
 	}
 
 	.contact-list-wrapper.visible {
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
+		display: block;
 	}
 }

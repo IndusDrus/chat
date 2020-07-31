@@ -25,3 +25,33 @@
 .login-btn {
 	font-size: 14px;	
 }
+
+@media (max-width: 480px) {
+	.login-form-wrapper {
+		width: 90%;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+	}
+
+	.login-form {
+		-webkit-flex: 1;
+		-ms-flex: 1;
+		flex: 1;
+	}
+}
+
+@media (max-width: 375px) {
+	.login-form-wrapper {
+		padding: 2rem;
+	}
+}
+
+@media (max-width: 320px) {
+	.login-form-wrapper {
+		padding: 2rem 1rem;
+	}
+}

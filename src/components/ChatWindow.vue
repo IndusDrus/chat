@@ -11,7 +11,8 @@
           <h3 class="contact-nickname">{{ receivingUser.nickname }}</h3>
         </div>
         <div class="chat-action">
-          <button class="btn btn-action chat-header-btn">
+          <button class="btn btn-action chat-header-btn"
+                  @click="showContactList()">
             <svg class="icon hamburger-icon" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
             <g>
               <g>
@@ -171,6 +172,10 @@
           return this.receivingUser.avatarURL
         }
 
+      },
+
+      showContactList () {
+        this.$emit('showContactList')
       }
     }
 }

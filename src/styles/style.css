@@ -55,6 +55,15 @@ body {
 }
 
 .btn {
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-items: center;
+  	-ms-flex-align: center;
+  	align-items: center;
 	background: 0 0;
 	border: 1px solid #e6e6e6;
 	border-radius: .25rem;

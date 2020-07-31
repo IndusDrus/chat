@@ -33,10 +33,6 @@
   	min-height: 80px;
 }
 
-.chat-header-btn {
-	display: inline-flex;
-}
-
 .chat-contact {
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -57,6 +53,9 @@
 	-webkit-align-items: flex-start;
 	-ms-flex-align: start;
 	align-items: flex-start;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
 	padding: 30px;
 }
 
@@ -126,7 +125,6 @@
 
 .send-button {
 	margin-left: 1rem;
-	display: inline-flex;
 }
 
 .send-icon {

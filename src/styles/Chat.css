@@ -6,8 +6,9 @@
 }
 
 .contact-list-wrapper {
-	border-right: 1px solid rgba(0,0,0,.125);
-	width: 350px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
 }
 
 .chat-wrapper {
@@ -22,14 +23,24 @@
 	flex: 1;
 }
 
-@media (max-width: 960px) {
-	.contact-list-wrapper {
-		width: 30%;
-	}
-}
-
 @media (max-width: 768px) {
 	.contact-list-wrapper {
 		display: none;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 999;
+		background: rgba(0, 0, 0, .7);
+		-webkit-justify-content: end;
+		-ms-flex-pack: end;
+		justify-content: end;
+	}
+
+	.contact-list-wrapper.visible {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
 	}
 }

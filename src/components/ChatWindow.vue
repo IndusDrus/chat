@@ -1,7 +1,7 @@
 <template>
   <div class="chat-window-wrapper">
     
-    <div v-if="isVisibleChat" class="chat-window">
+    <div class="chat-window">
       
       <div class="chat-header">
         <div class="chat-contact">
@@ -104,10 +104,6 @@
         }
 
         return messages
-      },
-
-      isVisibleChat () {
-        return this.isDefaultChat || this.receivingUser
       }
     },
 

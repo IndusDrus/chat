@@ -143,6 +143,10 @@
 }
 
 @media (max-width: 960px) {
+	.chat-window-wrapper {
+		max-height: 100vh;
+	}
+
 	.chat-header {
 		-webkit-justify-content: space-between;
 		-ms-flex-pack: justify;

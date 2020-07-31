@@ -21,6 +21,12 @@
 	flex: 1;
 }
 
+@media (min-width: 961px) {
+	.contact-list-wrapper {
+		width: 350px;
+	}
+}
+
 @media (max-width: 960px) {
 	.contact-list-wrapper {
 		display: none;

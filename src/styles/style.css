@@ -26,8 +26,6 @@ body {
 }
 
 #app {
-	height: -webkit-calc(var(--vh,1vh) * 100);
-	height: calc(var(--vh,1vh) * 100);
 	height: 100vh;
 }
 
@@ -115,4 +113,10 @@ body {
 .icon {
 	width: 16px;
 	height: 16px;
+}
+
+@media (max-width: 960px) {
+	#app {
+		height: 100%;
+	}
 }

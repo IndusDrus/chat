@@ -6,15 +6,15 @@
 							  @closeContactList="closeContactList()"></app-contact-list>
 		</div>
 		<div class="chat-wrapper">
-			<app-chat-window :sendingUser="currentUser"
+			<app-chat-window id="selected-chat"
+							 :sendingUser="currentUser"
 							 :receivingUser="selectedUser"
 							 :isDefaultChat="false"
-							 @updateChats="updateChats($event)"
 							 @showContactList="showContactList()"></app-chat-window>
-			<app-chat-window :sendingUser="defaultUser"
+			<app-chat-window id="default-chat"
+							 :sendingUser="defaultUser"
 							 :receivingUser="currentUser"
 							 :isDefaultChat="true"
-							 @updateChats="updateChats($event)"
 							 @showContactList="showContactList()"></app-chat-window>
 		</div>
 	</div>
@@ -30,7 +30,7 @@
 
     data () {
       return {
-        selectedUser: null,
+        selectedUser: this.$store.state.users[0],
         updateMethod: null,
         isVisibleContactsOnSmallScreens: false
       }
@@ -47,12 +47,16 @@
     methods: {
     	selectChat(user) {
     		this.selectedUser = user
-    		this.updateMethod()
+    		this.updateChat('selected-chat')
     		this.isVisibleContactsOnSmallScreens = false
     	},
 
-    	updateChats (updateMethod) {
-    		this.updateMethod = updateMethod
+    	updateChat (id) {
+    		setTimeout(function () {
+	          let chatWindow = document.getElementById(id)
+	          let chat = chatWindow.getElementsByClassName('chat-body')[0]
+	          chat.scrollTop = chat.scrollHeight
+	        }, 100)
     	},
 
     	showContactList () {

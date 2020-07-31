@@ -60,8 +60,11 @@
 }
 
 .message-wrapper {
-	margin-bottom: 3rem;
 	max-width: 75%;
+}
+
+.message-wrapper:not(:last-child) {
+	margin-bottom: 3rem;
 }
 
 .outgoing-message {
@@ -98,6 +101,8 @@
 	background: #ebebeb;
 	border-radius: 7px;
 	padding: 10px 20px;
+	word-wrap: break-word;
+	word-break: break-word;
 }
 
 .outgoing-message .message-content {
@@ -131,13 +136,13 @@
 	fill: #fff;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 961px) {
 	.chat-action {
 		display: none;
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
 	.chat-header {
 		-webkit-justify-content: space-between;
 		-ms-flex-pack: justify;
@@ -146,5 +151,16 @@
 	
 	.chat-action {
 		display: block;
+	}
+}
+
+@media (max-width: 480px) {
+	.chat-contact {
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-align-items: flex-start;
+  		-ms-flex-align: start;
+  		align-items: flex-start;
 	}
 }

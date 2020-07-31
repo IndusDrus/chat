@@ -26,7 +26,7 @@
 	font-size: 14px;	
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 	.login-form-wrapper {
 		width: 90%;
 		display: -webkit-flex;
@@ -44,13 +44,7 @@
 	}
 }
 
-@media (max-width: 375px) {
-	.login-form-wrapper {
-		padding: 2rem;
-	}
-}
-
-@media (max-width: 320px) {
+@media (max-width: 480px) {
 	.login-form-wrapper {
 		padding: 2rem 1rem;
 	}

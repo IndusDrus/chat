@@ -113,7 +113,6 @@
 
     created () {
       this.scrollChatsToBottom()
-      this.$emit('updateChats', this.scrollChatsToBottom)
     },
 
     methods: {
@@ -154,7 +153,7 @@
 
       scrollChatsToBottom () {
         setTimeout(function () {
-          var chatsArray = [...document.getElementsByClassName('chat-body')]
+          let chatsArray = [...document.getElementsByClassName('chat-body')]
           chatsArray.forEach( chat => {
             chat.scrollTop = chat.scrollHeight
           })
@@ -175,7 +174,8 @@
       },
 
       showContactList () {
-        this.$emit('showContactList')
+        if (!this.isDefaultChat)
+          this.$emit('showContactList')
       }
     }
 }

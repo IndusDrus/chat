@@ -13,12 +13,18 @@
     name: 'app',
     data () {
       return {
-        isLoggedIn: false,
-        currentUser: {}
+        isLoggedIn: false,    // Проверка входа в приложение
+        currentUser: {}       // Текущий пользователь
       }
     },
 
     methods: {
+
+      /**
+       * Войти в приложение
+       * 
+       * @param  {Object} user    Объект текущего пользователя
+       */
       login (user) {
         this.isLoggedIn = true
         this.currentUser = user

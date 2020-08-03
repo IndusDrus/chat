@@ -36,11 +36,17 @@
     name: 'app',
     data () {
       return {
-        activeUser: ""
+        activeUser: ""  // имя пользователя, с которым открыт чат
       }
     },
 
     computed: {
+      
+      /**
+       * Получение списка пользователей из хранилища
+       * 
+       * @return {Object} users   Объект списка пользователей
+       */
       users () {
         let users = this.$store.state.users
 
@@ -49,11 +55,20 @@
     },
 
     methods: {
+
+      /**
+       * Выбрать чат
+       * 
+       * @param  {Object} user    Объект выбранного пользователя
+       */
       selectChat (user) {
         this.$emit('selectChat', user)
         this.activeUser = user.nickname
       },
 
+      /**
+       * Закрыть список контактов
+       */
       closeContactList () {
         this.$emit('closeContactList')
       }

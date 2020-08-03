@@ -30,13 +30,18 @@
 
     data () {
       return {
-        selectedUser: this.$store.state.users[0],
-        updateMethod: null,
-        isVisibleContactsOnSmallScreens: false
+        selectedUser: this.$store.state.users[0],	// объект пользователя, с которым открыт чат
+        isVisibleContactsOnSmallScreens: false		// флаг открытия списка контактов на маленьких разрешения
       }
     },
 
     computed: {
+    	
+    	/**
+    	 * Установка в качестве пользователя по умолчанию Ивана Иванова
+    	 * 
+    	 * @return {Object} defaultUser		Объект пользователя по умолчанию
+    	 */
     	defaultUser () {
     		let defaultUser = this.$store.state.users[0]
 
@@ -45,12 +50,23 @@
     },
 
     methods: {
+    	
+    	/**
+    	 * Выбрать чат из списка контактов
+    	 * 
+    	 * @param  {Object} user 	Объект выбранного пользователя
+    	 */
     	selectChat(user) {
     		this.selectedUser = user
     		this.updateChat('selected-chat')
-    		this.isVisibleContactsOnSmallScreens = false
+    		this.isVisibleContactsOnSmallScreens = false	// Скрыть список контактов на маленьком разрешении
     	},
 
+    	/**
+    	 * Обновить окно чата (проскроллить в нижнюю часть к новому сообщению)
+    	 * 
+    	 * @param  {String} id 		ID окна чата
+    	 */
     	updateChat (id) {
     		setTimeout(function () {
 	          let chatWindow = document.getElementById(id)
@@ -59,10 +75,16 @@
 	        }, 100)
     	},
 
+    	/**
+    	 * Показать список контактов
+    	 */
     	showContactList () {
     		this.isVisibleContactsOnSmallScreens = true
     	},
 
+    	/**
+    	 * Скрыть список контактов
+    	 */
     	closeContactList () {
     		this.isVisibleContactsOnSmallScreens = false
     	}

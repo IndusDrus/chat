@@ -84,22 +84,45 @@
 
     data () {
       return {
-        newText: ""
+        newText: ""   // Текст нового сообщения
       }
     },
 
     computed: {
+      
+      /**
+       * Получение сообщений из хранилища для текущего чата
+       * @return {Object} messages    Объект сообщений для текущего чата
+       */
       messages () {
         let messages
+
+        // Все сообщения, находящиеся в хранилище
         let storeMessages = this.$store.state.messages
+
+        // Ник пользователя, отправляющего сообщение
         let sendingNick = this.sendingUser.nickname
+
+        // Ник пользователя, принимающего сообщение
         let receivingNick = this.receivingUser.nickname
 
         if (this.isDefaultChat) {
+          /* 
+              Для дефолтного пользователя вывести сообщения, где он
+              фигурирует, как отправитель или принимающий сообщение пользователь
+          */
           messages = storeMessages.filter( message => message.from != receivingNick || message.to != receivingNick )
         } else if (sendingNick === receivingNick) {
+          /* 
+              Для чата текущего пользователя с самим собой вывести
+              соответствующие сообщения
+          */
           messages = storeMessages.filter( message => message.from === sendingNick && message.to === sendingNick )
         } else {
+          /*
+              Для чата текущего пользователя с дефолтным, выводим
+              соответствующие сообщения 
+          */
           messages = storeMessages.filter( message => message.from != sendingNick || message.to != sendingNick )
         }
 
@@ -108,11 +131,14 @@
     },
 
     created () {
-      this.scrollChatsToBottom()
+      this.scrollChatsToBottom()    // При создании экземпляра чата скроллим его в самый низ
     },
 
     methods: {
       
+      /**
+       * Отправить сообщение
+       */
       sendMessage () {
         if (!this.isEmptyMessage()) {
           let date = new Date()
@@ -140,13 +166,21 @@
           this.scrollChatsToBottom()
         }
 
-        this.newText = ""
+        this.newText = ""   // Очищаем поле ввода сообщения после отправки
       },
 
+      
+      /**
+       * Проверить сообщение на то, что оно является пустым
+       * @return {Boolean}    Является ли сообщение пустым
+       */
       isEmptyMessage () {
         return this.newText === 0 || !this.newText.trim() ? true : false
       },
 
+      /**
+       * Прокрутить все экземпляры чатов вниз
+       */
       scrollChatsToBottom () {
         setTimeout(function () {
           let chatsArray = [...document.getElementsByClassName('chat-body')]
@@ -156,10 +190,24 @@
         }, 100)
       },
 
+      /**
+       * Проверить класс для экземпляра сообщения
+       * 
+       * @param  {Object} message     Объект сообщения из хранилища
+       * 
+       * @return {String}             Строка с названием класса
+       */
       getAlignClass (message) {
         return message.from === this.sendingUser.nickname ? 'outgoing-message' : ''
       },
 
+      /**
+       * Получить аватар для экземпляра сообщения
+       *  
+       * @param  {Object} message     Объект сообщения из хранилища
+       * 
+       * @return {String}             Адрес аватара для сообщения
+       */
       getAvatarURL (message) {
         if (message.from === this.sendingUser.nickname) {
           return this.sendingUser.avatarURL
@@ -169,6 +217,9 @@
 
       },
 
+      /**
+       * Показать список контактов
+       */
       showContactList () {
         if (!this.isDefaultChat)
           this.$emit('showContactList')

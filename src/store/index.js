@@ -11,48 +11,27 @@ export default new Vuex.Store({
         avatarURL: "https://ichef.bbci.co.uk/news/660/cpsprodpb/12A9B/production/_111434467_gettyimages-1143489763.jpg"
       }
     ],
-    messages: [
-      {
-        from: "asd",
-        to: "Иван Иванов",
-        text: "Message 1",
-        time: "16:36"
-      },
-      {
-        from: "Иван Иванов",
-        to: "asd",
-        text: "Message 2",
-        time: "16:38"
-      },
-      {
-        from: "Иван Иванов",
-        to: "asd",
-        text: "Message 3",
-        time: "16:39"
-      },
-      {
-        from: "asd",
-        to: "asd",
-        text: "Message 4",
-        time: "17:39"
-      },
-      {
-        from: "asd",
-        to: "asd",
-        text: "Message 5",
-        time: "18:39"
-      }
-    ]
+    messages: []
   },
 
   getters: {},
 
   mutations: {
-    
+
+    /**
+     * Войти в приложение
+     * 
+     * @param  {Object} user    Текущий пользователь
+     */
     login (state, user) {
       state.users.push(user)
     },
 
+    /**
+     * Отправить сообщение
+     * 
+     * @param  {Object} message  Объект сообщения
+     */
     sendMessage (state, message) {
       state.messages.push(message)
     }
@@ -60,10 +39,20 @@ export default new Vuex.Store({
 
   actions: {
     
+    /**
+     * Инициация мутации входа в приложение
+     * 
+     * @param  {Object} user    Текущий пользователь
+     */
     login (context, user) {
       context.commit('login', user)
     },
 
+    /**
+     * Инициация мутации отправки сообщения
+     * 
+     * @param  {Object} message  Объект сообщения
+     */
     sendMessage (context, message) {
       context.commit('sendMessage', message)
     }

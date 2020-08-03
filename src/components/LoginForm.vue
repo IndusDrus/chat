@@ -22,15 +22,20 @@
 	export default {
 		data () {
 			return {
-				nickname: "",
-				avatarURL: ""
+				nickname: "",	// Имя текущего пользователя
+				avatarURL: ""	// Ссылка на аватар текущего пользователя
 			}
 		},
 
 		methods: {
+			
+			/**
+			 * Войти в приложение
+			 */
 			login () {
 				let nickname = this.nickname
 				let avatarURL = this.avatarURL
+
 				this.$store.dispatch('login', {nickname, avatarURL})
 				this.$emit('loggedIn', {nickname, avatarURL})
 			}
